@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DA7320F1-C3F4-4C63-97A0-4E64BF0B7E93</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MPPlot</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC0F8866-107B-4CC1-9ADC-8FD1C535C50C</key>
+		<string>https://github.com/MP0w/MPPlot.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>example/MPPlot.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC0F8866-107B-4CC1-9ADC-8FD1C535C50C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MP0w/MPPlot.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC0F8866-107B-4CC1-9ADC-8FD1C535C50C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC0F8866-107B-4CC1-9ADC-8FD1C535C50C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MPPlot-git</string>
+		</dict>
+	</array>
+</dict>
+</plist>

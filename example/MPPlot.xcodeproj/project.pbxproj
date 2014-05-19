@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE4FB905192A569E004A1C1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4FB904192A569E004A1C1E /* Foundation.framework */; };
+		DE4FB907192A569E004A1C1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4FB906192A569E004A1C1E /* CoreGraphics.framework */; };
+		DE4FB909192A569E004A1C1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4FB908192A569E004A1C1E /* UIKit.framework */; };
+		DE4FB90F192A569E004A1C1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE4FB90D192A569E004A1C1E /* InfoPlist.strings */; };
+		DE4FB911192A569E004A1C1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB910192A569E004A1C1E /* main.m */; };
+		DE4FB915192A569E004A1C1E /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB914192A569E004A1C1E /* MPAppDelegate.m */; };
+		DE4FB918192A569E004A1C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4FB916192A569E004A1C1E /* Main.storyboard */; };
+		DE4FB91B192A569E004A1C1E /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB91A192A569E004A1C1E /* MPViewController.m */; };
+		DE4FB91D192A569E004A1C1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE4FB91C192A569E004A1C1E /* Images.xcassets */; };
+		DE4FB924192A569E004A1C1E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4FB923192A569E004A1C1E /* XCTest.framework */; };
+		DE4FB925192A569E004A1C1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4FB904192A569E004A1C1E /* Foundation.framework */; };
+		DE4FB926192A569E004A1C1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4FB908192A569E004A1C1E /* UIKit.framework */; };
+		DE4FB92E192A569E004A1C1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE4FB92C192A569E004A1C1E /* InfoPlist.strings */; };
+		DE4FB930192A569E004A1C1E /* MPPlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB92F192A569E004A1C1E /* MPPlotTests.m */; };
+		DE4FB93B192A56BD004A1C1E /* MPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB93A192A56BD004A1C1E /* MPGraphView.m */; };
+		DE4FB93E192A5752004A1C1E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB93D192A5752004A1C1E /* UIView+Frame.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE4FB927192A569E004A1C1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE4FB8F9192A569E004A1C1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE4FB900192A569E004A1C1E;
+			remoteInfo = MPPlot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE4FB901192A569E004A1C1E /* MPPlot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPPlot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4FB904192A569E004A1C1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DE4FB906192A569E004A1C1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DE4FB908192A569E004A1C1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DE4FB90C192A569E004A1C1E /* MPPlot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MPPlot-Info.plist"; sourceTree = "<group>"; };
+		DE4FB90E192A569E004A1C1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DE4FB910192A569E004A1C1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE4FB912192A569E004A1C1E /* MPPlot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MPPlot-Prefix.pch"; sourceTree = "<group>"; };
+		DE4FB913192A569E004A1C1E /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
+		DE4FB914192A569E004A1C1E /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
+		DE4FB917192A569E004A1C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE4FB919192A569E004A1C1E /* MPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
+		DE4FB91A192A569E004A1C1E /* MPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
+		DE4FB91C192A569E004A1C1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE4FB922192A569E004A1C1E /* MPPlotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPPlotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4FB923192A569E004A1C1E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DE4FB92B192A569E004A1C1E /* MPPlotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MPPlotTests-Info.plist"; sourceTree = "<group>"; };
+		DE4FB92D192A569E004A1C1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DE4FB92F192A569E004A1C1E /* MPPlotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPlotTests.m; sourceTree = "<group>"; };
+		DE4FB939192A56BD004A1C1E /* MPGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGraphView.h; path = ../MPGraphView.h; sourceTree = "<group>"; };
+		DE4FB93A192A56BD004A1C1E /* MPGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPGraphView.m; path = ../MPGraphView.m; sourceTree = "<group>"; };
+		DE4FB93C192A5752004A1C1E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "MPPlot/UIView+Frame.h"; sourceTree = "<group>"; };
+		DE4FB93D192A5752004A1C1E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE4FB8FE192A569E004A1C1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4FB907192A569E004A1C1E /* CoreGraphics.framework in Frameworks */,
+				DE4FB909192A569E004A1C1E /* UIKit.framework in Frameworks */,
+				DE4FB905192A569E004A1C1E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4FB91F192A569E004A1C1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4FB924192A569E004A1C1E /* XCTest.framework in Frameworks */,
+				DE4FB926192A569E004A1C1E /* UIKit.framework in Frameworks */,
+				DE4FB925192A569E004A1C1E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE4FB8F8192A569E004A1C1E = {
+			isa = PBXGroup;
+			children = (
+				DE4FB93C192A5752004A1C1E /* UIView+Frame.h */,
+				DE4FB939192A56BD004A1C1E /* MPGraphView.h */,
+				DE4FB93A192A56BD004A1C1E /* MPGraphView.m */,
+				DE4FB90A192A569E004A1C1E /* MPPlot */,
+				DE4FB929192A569E004A1C1E /* MPPlotTests */,
+				DE4FB903192A569E004A1C1E /* Frameworks */,
+				DE4FB902192A569E004A1C1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE4FB902192A569E004A1C1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB901192A569E004A1C1E /* MPPlot.app */,
+				DE4FB922192A569E004A1C1E /* MPPlotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE4FB903192A569E004A1C1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB904192A569E004A1C1E /* Foundation.framework */,
+				DE4FB906192A569E004A1C1E /* CoreGraphics.framework */,
+				DE4FB908192A569E004A1C1E /* UIKit.framework */,
+				DE4FB923192A569E004A1C1E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE4FB90A192A569E004A1C1E /* MPPlot */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB913192A569E004A1C1E /* MPAppDelegate.h */,
+				DE4FB914192A569E004A1C1E /* MPAppDelegate.m */,
+				DE4FB916192A569E004A1C1E /* Main.storyboard */,
+				DE4FB919192A569E004A1C1E /* MPViewController.h */,
+				DE4FB91A192A569E004A1C1E /* MPViewController.m */,
+				DE4FB93D192A5752004A1C1E /* UIView+Frame.m */,
+				DE4FB91C192A569E004A1C1E /* Images.xcassets */,
+				DE4FB90B192A569E004A1C1E /* Supporting Files */,
+			);
+			path = MPPlot;
+			sourceTree = "<group>";
+		};
+		DE4FB90B192A569E004A1C1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB90C192A569E004A1C1E /* MPPlot-Info.plist */,
+				DE4FB90D192A569E004A1C1E /* InfoPlist.strings */,
+				DE4FB910192A569E004A1C1E /* main.m */,
+				DE4FB912192A569E004A1C1E /* MPPlot-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE4FB929192A569E004A1C1E /* MPPlotTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB92F192A569E004A1C1E /* MPPlotTests.m */,
+				DE4FB92A192A569E004A1C1E /* Supporting Files */,
+			);
+			path = MPPlotTests;
+			sourceTree = "<group>";
+		};
+		DE4FB92A192A569E004A1C1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB92B192A569E004A1C1E /* MPPlotTests-Info.plist */,
+				DE4FB92C192A569E004A1C1E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE4FB900192A569E004A1C1E /* MPPlot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE4FB933192A569E004A1C1E /* Build configuration list for PBXNativeTarget "MPPlot" */;
+			buildPhases = (
+				DE4FB8FD192A569E004A1C1E /* Sources */,
+				DE4FB8FE192A569E004A1C1E /* Frameworks */,
+				DE4FB8FF192A569E004A1C1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPPlot;
+			productName = MPPlot;
+			productReference = DE4FB901192A569E004A1C1E /* MPPlot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE4FB921192A569E004A1C1E /* MPPlotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE4FB936192A569E004A1C1E /* Build configuration list for PBXNativeTarget "MPPlotTests" */;
+			buildPhases = (
+				DE4FB91E192A569E004A1C1E /* Sources */,
+				DE4FB91F192A569E004A1C1E /* Frameworks */,
+				DE4FB920192A569E004A1C1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE4FB928192A569E004A1C1E /* PBXTargetDependency */,
+			);
+			name = MPPlotTests;
+			productName = MPPlotTests;
+			productReference = DE4FB922192A569E004A1C1E /* MPPlotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE4FB8F9192A569E004A1C1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = mpow;
+				TargetAttributes = {
+					DE4FB921192A569E004A1C1E = {
+						TestTargetID = DE4FB900192A569E004A1C1E;
+					};
+				};
+			};
+			buildConfigurationList = DE4FB8FC192A569E004A1C1E /* Build configuration list for PBXProject "MPPlot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE4FB8F8192A569E004A1C1E;
+			productRefGroup = DE4FB902192A569E004A1C1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE4FB900192A569E004A1C1E /* MPPlot */,
+				DE4FB921192A569E004A1C1E /* MPPlotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE4FB8FF192A569E004A1C1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4FB91D192A569E004A1C1E /* Images.xcassets in Resources */,
+				DE4FB90F192A569E004A1C1E /* InfoPlist.strings in Resources */,
+				DE4FB918192A569E004A1C1E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4FB920192A569E004A1C1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4FB92E192A569E004A1C1E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE4FB8FD192A569E004A1C1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4FB911192A569E004A1C1E /* main.m in Sources */,
+				DE4FB91B192A569E004A1C1E /* MPViewController.m in Sources */,
+				DE4FB93B192A56BD004A1C1E /* MPGraphView.m in Sources */,
+				DE4FB93E192A5752004A1C1E /* UIView+Frame.m in Sources */,
+				DE4FB915192A569E004A1C1E /* MPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE4FB91E192A569E004A1C1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4FB930192A569E004A1C1E /* MPPlotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE4FB928192A569E004A1C1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE4FB900192A569E004A1C1E /* MPPlot */;
+			targetProxy = DE4FB927192A569E004A1C1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE4FB90D192A569E004A1C1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4FB90E192A569E004A1C1E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DE4FB916192A569E004A1C1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4FB917192A569E004A1C1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE4FB92C192A569E004A1C1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE4FB92D192A569E004A1C1E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE4FB931192A569E004A1C1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DE4FB932192A569E004A1C1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE4FB934192A569E004A1C1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPPlot/MPPlot-Prefix.pch";
+				INFOPLIST_FILE = "MPPlot/MPPlot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DE4FB935192A569E004A1C1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPPlot/MPPlot-Prefix.pch";
+				INFOPLIST_FILE = "MPPlot/MPPlot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DE4FB937192A569E004A1C1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MPPlot.app/MPPlot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPPlot/MPPlot-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MPPlotTests/MPPlotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DE4FB938192A569E004A1C1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MPPlot.app/MPPlot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MPPlot/MPPlot-Prefix.pch";
+				INFOPLIST_FILE = "MPPlotTests/MPPlotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE4FB8FC192A569E004A1C1E /* Build configuration list for PBXProject "MPPlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4FB931192A569E004A1C1E /* Debug */,
+				DE4FB932192A569E004A1C1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE4FB933192A569E004A1C1E /* Build configuration list for PBXNativeTarget "MPPlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4FB934192A569E004A1C1E /* Debug */,
+				DE4FB935192A569E004A1C1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE4FB936192A569E004A1C1E /* Build configuration list for PBXNativeTarget "MPPlotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE4FB937192A569E004A1C1E /* Debug */,
+				DE4FB938192A569E004A1C1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE4FB8F9192A569E004A1C1E /* Project object */;
+}
