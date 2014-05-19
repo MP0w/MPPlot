@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPGraphView.h"
 
-@interface MPViewController : UIViewController
+@interface MPViewController : UIViewController{
+    
+    MPGraphView *graph,*graph2;
+}
 
 @end

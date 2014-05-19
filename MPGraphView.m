@@ -111,6 +111,11 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
 
 @implementation MPGraphView
 
++ (Class)layerClass{
+    return [CAShapeLayer class];
+}
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -120,12 +125,10 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
         
         currentTag=-1;
         
+        
     }
     return self;
 }
-
-//            placedata=[@{@"gasoline": gasoline,@"diesel":diesel,@"dates":dates} mutableCopy];
-
 
 
 
@@ -134,91 +137,92 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     [super drawRect:rect];
     
     
-    
-    BOOL fill=self.fillColors.count;
-    
     if (self.values.count) {
         
         [label removeFromSuperview]; label=nil;
 
-        for (UIButton* button in buttons) {
-            [button removeFromSuperview];
-        }
-        
-        
-        
-        
-        
-        UIBezierPath *path=[UIBezierPath bezierPath];
-        
-        
-        
-        buttons=[[NSMutableArray alloc] init];
-        
-        
-        for (NSInteger i=0;i<points.count;i++) {
-            
-
-            CGPoint point=[self pointAtIndex:i];
-            
-            if(i==0)
-                [path moveToPoint:point];
-
-            
-            MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom];
-            [button setBackgroundColor:self.graphColor];
-            button.layer.cornerRadius=3;
-            button.frame=CGRectMake(0, 0, 6, 6);
-            button.center=point;
-            [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
-            button.tag=i;
-            [self addSubview:button];
-            
-            [buttons addObject:button];
-            
-            [path addLineToPoint:point];
-            
-
-            
-        }
-        
-        
-
-        
-        if (self.curved) {
-            
-            path=[path smoothedPathWithGranularity:20];
-            
-        }
-        
-        
-        if(fill){
-            
-            CGPoint last=[self pointAtIndex:points.count-1];
-            CGPoint first=[self pointAtIndex:0];
-            [path addLineToPoint:CGPointMake(last.x,self.height)];
-            [path addLineToPoint:CGPointMake(first.x,self.height)];
-            [path addLineToPoint:first];
-            
-            
-            [path fill];
-            
-            CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-            maskLayer.frame = self.bounds;
-            maskLayer.path = path.CGPath;
-    
-            gradient.mask=maskLayer;
-            
-        }
-        
-        [self.graphColor setStroke];
-            
-        path.lineWidth=self.lineWidth ? self.lineWidth : 1;
-        [path stroke];
-            
-        
-
+        ((CAShapeLayer *)self.layer).fillColor=[UIColor clearColor].CGColor;
+        ((CAShapeLayer *)self.layer).strokeColor = self.graphColor.CGColor;
+        ((CAShapeLayer *)self.layer).path = [self graphPathFromPoints].CGPath;
     }
+}
+
+
+- (UIBezierPath *)graphPathFromPoints{
+    
+    BOOL fill=self.fillColors.count;
+    
+    UIBezierPath *path=[UIBezierPath bezierPath];
+    
+    
+    for (UIButton* button in buttons) {
+        [button removeFromSuperview];
+    }
+    
+    buttons=[[NSMutableArray alloc] init];
+    
+    
+    for (NSInteger i=0;i<points.count;i++) {
+        
+        
+        CGPoint point=[self pointAtIndex:i];
+        
+        if(i==0)
+            [path moveToPoint:point];
+        
+        
+        MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom];
+        [button setBackgroundColor:self.graphColor];
+        button.layer.cornerRadius=3;
+        button.frame=CGRectMake(0, 0, 6, 6);
+        button.center=point;
+        [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+        button.tag=i;
+        [self addSubview:button];
+        
+        [buttons addObject:button];
+        
+        [path addLineToPoint:point];
+        
+        
+        
+    }
+    
+    
+    
+    
+    if (self.curved) {
+        
+        path=[path smoothedPathWithGranularity:20];
+        
+    }
+    
+    
+    if(fill){
+        
+        CGPoint last=[self pointAtIndex:points.count-1];
+        CGPoint first=[self pointAtIndex:0];
+        [path addLineToPoint:CGPointMake(last.x,self.height)];
+        [path addLineToPoint:CGPointMake(first.x,self.height)];
+        [path addLineToPoint:first];
+        
+    }
+    
+    if (fill) {
+        
+        
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+        maskLayer.frame = self.bounds;
+        maskLayer.path = path.CGPath;
+        
+        gradient.mask=maskLayer;
+    }
+    
+    
+    path.lineWidth=self.lineWidth ? self.lineWidth : 1;
+    
+    
+    return path;
 }
 
 - (CGPoint)pointAtIndex:(NSInteger)index{
@@ -295,7 +299,7 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     avg/=dict.count;
     
     
-    NSMutableArray *points=[[NSMutableArray alloc] init];
+    NSMutableArray *pointsArray=[[NSMutableArray alloc] init];
     
     if(max!=min){
         for (NSString *p in dict) {
@@ -304,12 +308,12 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
             
             val=((val-min)/(max-min));
             
-            [points addObject:@(val)];
+            [pointsArray addObject:@(val)];
         }
         
-    }else [points addObject:@(1)];
+    }else [pointsArray addObject:@(1)];
 
-    return points;
+    return pointsArray;
 }
 
 
@@ -327,6 +331,75 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     
 }
 
+
+
+- (void)animate{
+    
+    gradient.hidden=1;
+    
+    ((CAShapeLayer *)self.layer).fillColor=[UIColor clearColor].CGColor;
+    ((CAShapeLayer *)self.layer).strokeColor = self.graphColor.CGColor;
+    ((CAShapeLayer *)self.layer).path = [self graphPathFromPoints].CGPath;
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.fromValue = @0;
+    animation.toValue = @1;
+    animation.duration = self.animationDuration;
+    animation.delegate=self;
+    [self.layer addAnimation:animation forKey:@"MPStroke"];
+
+    
+
+    for (UIButton* button in buttons) {
+        [button removeFromSuperview];
+    }
+    
+    buttons=[[NSMutableArray alloc] init];
+    
+    CGFloat delay=((CGFloat)self.animationDuration)/(CGFloat)points.count;
+    
+
+    
+    for (NSInteger i=0;i<points.count;i++) {
+        
+        
+        CGPoint point=[self pointAtIndex:i];
+        
+        
+        MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom];
+        [button setBackgroundColor:self.graphColor];
+        button.layer.cornerRadius=3;
+        button.frame=CGRectMake(0, 0, 6, 6);
+        button.center=point;
+        [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+        button.tag=i;
+        button.transform=CGAffineTransformMakeScale(0,0);
+        [self addSubview:button];
+        
+        [self performSelector:@selector(displayPoint:) withObject:button afterDelay:delay*i];
+        
+        [buttons addObject:button];
+        
+        
+    }
+    
+    
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
+    
+    gradient.hidden=0;
+}
+
+
+- (void)displayPoint:(UIButton *)button{
+    
+        [UIView animateWithDuration:.2 animations:^{
+            button.transform=CGAffineTransformMakeScale(1, 1);
+        }];
+    
+    
+}
 
 #pragma mark setters
 
@@ -383,7 +456,9 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
 
 
 
-
+- (CGFloat)animationDuration{
+    return _animationDuration>0.0 ? _animationDuration : ANIMATIONDURATION;
+}
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
     
@@ -399,5 +474,6 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     
     return view;
 }
+
 
 @end

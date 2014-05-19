@@ -7,7 +7,6 @@
 //
 
 #import "MPViewController.h"
-#import "MPGraphView.h"
 
 @interface MPViewController ()
 
@@ -19,7 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    MPGraphView *graph=[[MPGraphView alloc] initWithFrame:CGRectMake(0, 30, 320, 200)];
+    graph=[[MPGraphView alloc] initWithFrame:CGRectMake(0, 30, 320, 200)];
     
 //    NSMutableArray *arr=[[NSMutableArray alloc] init];
 //    
@@ -34,12 +33,21 @@
     [self.view addSubview:graph];
     
     
-    MPGraphView *graph2=[[MPGraphView alloc] initWithFrame:CGRectMake(0, 250, 320, 200)];
+    graph2=[[MPGraphView alloc] initWithFrame:CGRectMake(0, 250, 320, 200)];
     graph2.values=@[@2.5,@2.6,@2.8,@3,@2.8,@3.2,@3.6,@4,@4.5,@5,@4,@3.6];
     //graph2.fillColors=@[[UIColor orangeColor],[UIColor colorWithRed:1.000 green:0.827 blue:0.000 alpha:1.000]];
     graph2.curved=YES;
     graph2.graphColor=[UIColor redColor];
     [self.view addSubview:graph2];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    [graph animate];
+    [graph2 animate];
 }
 
 - (void)didReceiveMemoryWarning

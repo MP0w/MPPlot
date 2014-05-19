@@ -11,6 +11,7 @@
 
 #define PADDING 12
 
+#define ANIMATIONDURATION 1.5
 
 
 @interface MPGraphView : UIView{
@@ -22,6 +23,8 @@
     UILabel *label;
     
     NSInteger currentTag;
+    
+
 }
 
 
@@ -31,9 +34,13 @@
 @property (nonatomic,retain) UIColor *graphColor; // color of the line
 @property (nonatomic,assign) CGFloat lineWidth;
 @property (nonatomic,assign) BOOL curved;
+@property (nonatomic,assign) CGFloat animationDuration;
 
 // detail View customization
 @property (nonatomic,retain) UIColor *detailBackgroundColor;
 @property (nonatomic,retain) UIColor *detailTextColor;
+
+
+- (void)animate;
 
 @end
