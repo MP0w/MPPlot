@@ -257,7 +257,9 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     label.backgroundColor=self.detailBackgroundColor;
     label.layer.borderColor=label.textColor.CGColor;
     label.layer.borderWidth=.5;
-    label.text=[NSString stringWithFormat:@"%.3f",[[self.values objectAtIndex:currentTag] floatValue]];
+    if ([[self.values objectAtIndex:currentTag] isKindOfClass:[NSString class]]) {
+        label.text=[self.values objectAtIndex:currentTag];
+    }else label.text=[NSString stringWithFormat:@"%@",[self.detailLabelFormatter stringFromNumber:[self.values objectAtIndex:currentTag]]];
     label.center=CGPointMake(button.center.x,button.center.y);
     label.layer.cornerRadius=3;
     label.clipsToBounds=YES;
@@ -316,20 +318,6 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     return pointsArray;
 }
 
-
-
-- (UIColor *)graphColor{
-    
-    return _graphColor ? _graphColor : [UIColor blueColor];
-    
-}
-
-
-- (UIColor *)detailBackgroundColor{
-    
-    return _detailBackgroundColor ? _detailBackgroundColor : [UIColor whiteColor];
-    
-}
 
 
 
@@ -454,11 +442,40 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     [self setNeedsDisplay];
 }
 
+#pragma mark Getters
+
+- (NSNumberFormatter *)detailLabelFormatter{
+    
+    if (!_detailLabelFormatter) {
+        _detailLabelFormatter=[[NSNumberFormatter alloc] init];
+        _detailLabelFormatter.locale=[NSLocale currentLocale];
+        _detailLabelFormatter.numberStyle=NSNumberFormatterDecimalStyle;
+    }
+    
+    return  _detailLabelFormatter;
+}
+
+- (UIColor *)graphColor{
+    
+    return _graphColor ? _graphColor : [UIColor blueColor];
+    
+}
+
+
+- (UIColor *)detailBackgroundColor{
+    
+    return _detailBackgroundColor ? _detailBackgroundColor : [UIColor whiteColor];
+    
+}
+
 
 
 - (CGFloat)animationDuration{
     return _animationDuration>0.0 ? _animationDuration : ANIMATIONDURATION;
 }
+
+
+#pragma mark Internal
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
     

@@ -40,6 +40,7 @@
 @property (nonatomic,retain) UIColor *detailBackgroundColor;
 @property (nonatomic,retain) UIColor *detailTextColor;
 
+@property (nonatomic,retain) NSNumberFormatter *detailLabelFormatter;
 
 - (void)animate;
 
