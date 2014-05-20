@@ -11,7 +11,7 @@
 
 @interface MPViewController : UIViewController{
     
-    MPGraphView *graph,*graph2;
+    MPGraphView *graph,*graph2,*graph3,*graph4;
 }
 
 @end

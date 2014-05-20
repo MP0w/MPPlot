@@ -13,6 +13,8 @@
 
 #define ANIMATIONDURATION 1.5
 
+typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
+
 
 @interface MPGraphView : UIView{
     
@@ -24,17 +26,17 @@
     
     NSInteger currentTag;
     
-
+    GraphPointsAlgorithm _customAlgorithm;
+    NSUInteger _numberOfPoints;
 }
-
-
 
 @property (nonatomic,copy) NSArray *values; // array of NSNumber or NSString
 @property (nonatomic,retain) NSArray *fillColors; // array of colors or CGColor
 @property (nonatomic,retain) UIColor *graphColor; // color of the line
 @property (nonatomic,assign) CGFloat lineWidth;
-@property (nonatomic,assign) BOOL curved;
+@property (nonatomic,assign) BOOL curved, waitToUpdate;
 @property (nonatomic,assign) CGFloat animationDuration;
+
 
 // detail View customization
 @property (nonatomic,retain) UIColor *detailBackgroundColor;
@@ -42,6 +44,9 @@
 
 @property (nonatomic,retain) NSNumberFormatter *detailLabelFormatter;
 
+
 - (void)animate;
+
+- (void)setAlgorithm:(GraphPointsAlgorithm)customAlgorithm numberOfPoints:(NSUInteger)numberOfPoints;
 
 @end

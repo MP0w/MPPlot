@@ -111,6 +111,8 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
 
 @implementation MPGraphView
 
+
+
 + (Class)layerClass{
     return [CAShapeLayer class];
 }
@@ -137,7 +139,7 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     [super drawRect:rect];
     
     
-    if (self.values.count) {
+    if (self.values.count && !self.waitToUpdate) {
         
         [label removeFromSuperview]; label=nil;
 
@@ -323,6 +325,8 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
 
 - (void)animate{
     
+    self.waitToUpdate=NO;
+    
     gradient.hidden=1;
     
     ((CAShapeLayer *)self.layer).fillColor=[UIColor clearColor].CGColor;
@@ -439,6 +443,22 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
 
 -(void)setCurved:(BOOL)curved{
     _curved=curved;
+    [self setNeedsDisplay];
+}
+
+- (void)setAlgorithm:(GraphPointsAlgorithm)customAlgorithm numberOfPoints:(NSUInteger)numberOfPoints{
+
+    _numberOfPoints=numberOfPoints;
+    _customAlgorithm=customAlgorithm;
+    
+    NSMutableArray* values=[[NSMutableArray alloc] init];
+    
+    for (NSUInteger i=0; i<numberOfPoints; i++) {
+        [values addObject:@(customAlgorithm(i))];
+    }
+    
+    self.values=values;
+    
     [self setNeedsDisplay];
 }
 
