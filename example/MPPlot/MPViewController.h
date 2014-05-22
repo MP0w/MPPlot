@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MPGraphView.h"
+#import "MPPlot.h"
 
 @interface MPViewController : UIViewController{
     

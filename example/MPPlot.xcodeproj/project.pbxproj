@@ -23,6 +23,8 @@
 		DE4FB930192A569E004A1C1E /* MPPlotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB92F192A569E004A1C1E /* MPPlotTests.m */; };
 		DE4FB93B192A56BD004A1C1E /* MPGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB93A192A56BD004A1C1E /* MPGraphView.m */; };
 		DE4FB93E192A5752004A1C1E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB93D192A5752004A1C1E /* UIView+Frame.m */; };
+		DEC71AD0192E69E20023E89E /* MPPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC71ACF192E69E20023E89E /* MPPlot.m */; };
+		DEC71AD3192E6D500023E89E /* UIBezierPath+curved.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC71AD2192E6D500023E89E /* UIBezierPath+curved.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +59,12 @@
 		DE4FB92F192A569E004A1C1E /* MPPlotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPlotTests.m; sourceTree = "<group>"; };
 		DE4FB939192A56BD004A1C1E /* MPGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPGraphView.h; path = ../MPGraphView.h; sourceTree = "<group>"; };
 		DE4FB93A192A56BD004A1C1E /* MPGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPGraphView.m; path = ../MPGraphView.m; sourceTree = "<group>"; };
-		DE4FB93C192A5752004A1C1E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "MPPlot/UIView+Frame.h"; sourceTree = "<group>"; };
-		DE4FB93D192A5752004A1C1E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		DE4FB93C192A5752004A1C1E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../UIView+Frame.h"; sourceTree = "<group>"; };
+		DE4FB93D192A5752004A1C1E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../UIView+Frame.m"; sourceTree = "<group>"; };
+		DEC71ACE192E69E20023E89E /* MPPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPPlot.h; path = ../MPPlot.h; sourceTree = "<group>"; };
+		DEC71ACF192E69E20023E89E /* MPPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPlot.m; path = ../MPPlot.m; sourceTree = "<group>"; };
+		DEC71AD1192E6D500023E89E /* UIBezierPath+curved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+curved.h"; path = "../UIBezierPath+curved.h"; sourceTree = "<group>"; };
+		DEC71AD2192E6D500023E89E /* UIBezierPath+curved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+curved.m"; path = "../UIBezierPath+curved.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,9 @@
 		DE4FB8F8192A569E004A1C1E = {
 			isa = PBXGroup;
 			children = (
-				DE4FB93C192A5752004A1C1E /* UIView+Frame.h */,
+				DEC71AD4192E70E20023E89E /* Categories */,
+				DEC71ACE192E69E20023E89E /* MPPlot.h */,
+				DEC71ACF192E69E20023E89E /* MPPlot.m */,
 				DE4FB939192A56BD004A1C1E /* MPGraphView.h */,
 				DE4FB93A192A56BD004A1C1E /* MPGraphView.m */,
 				DE4FB90A192A569E004A1C1E /* MPPlot */,
@@ -126,7 +134,6 @@
 				DE4FB916192A569E004A1C1E /* Main.storyboard */,
 				DE4FB919192A569E004A1C1E /* MPViewController.h */,
 				DE4FB91A192A569E004A1C1E /* MPViewController.m */,
-				DE4FB93D192A5752004A1C1E /* UIView+Frame.m */,
 				DE4FB91C192A569E004A1C1E /* Images.xcassets */,
 				DE4FB90B192A569E004A1C1E /* Supporting Files */,
 			);
@@ -160,6 +167,17 @@
 				DE4FB92C192A569E004A1C1E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEC71AD4192E70E20023E89E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DE4FB93C192A5752004A1C1E /* UIView+Frame.h */,
+				DE4FB93D192A5752004A1C1E /* UIView+Frame.m */,
+				DEC71AD1192E6D500023E89E /* UIBezierPath+curved.h */,
+				DEC71AD2192E6D500023E89E /* UIBezierPath+curved.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE4FB911192A569E004A1C1E /* main.m in Sources */,
+				DEC71AD3192E6D500023E89E /* UIBezierPath+curved.m in Sources */,
 				DE4FB91B192A569E004A1C1E /* MPViewController.m in Sources */,
 				DE4FB93B192A56BD004A1C1E /* MPGraphView.m in Sources */,
+				DEC71AD0192E69E20023E89E /* MPPlot.m in Sources */,
 				DE4FB93E192A5752004A1C1E /* UIView+Frame.m in Sources */,
 				DE4FB915192A569E004A1C1E /* MPAppDelegate.m in Sources */,
 			);

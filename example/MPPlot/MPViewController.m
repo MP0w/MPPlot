@@ -18,14 +18,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    graph=[[MPGraphView alloc] initWithFrame:CGRectMake(0, 30, 320, 200)];
+    graph=[MPPlot plotWithType:MPPlotTypeGraph frame:CGRectMake(0, 30, 320, 200)];
     
 //    NSMutableArray *arr=[[NSMutableArray alloc] init];
 //    
 //    for (NSInteger i=0; i<10; i++) {
 //        [arr addObject:@([self cubex:i])];
 //    }
-//    
+//
     graph.fillColors=@[[UIColor colorWithRed:0.251 green:0.232 blue:1.000 alpha:1.000],[UIColor colorWithRed:0.282 green:0.945 blue:1.000 alpha:1.000]];
     graph.values=@[@2.5,@2.6,@2.8,@3,@3.3,@3,@3.6,@3.8,@3.2,@3.6,@4,@4.5];
     graph.graphColor=[UIColor colorWithRed:0.500 green:0.158 blue:1.000 alpha:1.000];
