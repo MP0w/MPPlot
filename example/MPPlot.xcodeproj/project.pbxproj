@@ -25,6 +25,7 @@
 		DE4FB93E192A5752004A1C1E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4FB93D192A5752004A1C1E /* UIView+Frame.m */; };
 		DEC71AD0192E69E20023E89E /* MPPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC71ACF192E69E20023E89E /* MPPlot.m */; };
 		DEC71AD3192E6D500023E89E /* UIBezierPath+curved.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC71AD2192E6D500023E89E /* UIBezierPath+curved.m */; };
+		DEC71AD7192E719B0023E89E /* MPBarsGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC71AD6192E719B0023E89E /* MPBarsGraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		DEC71ACF192E69E20023E89E /* MPPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPPlot.m; path = ../MPPlot.m; sourceTree = "<group>"; };
 		DEC71AD1192E6D500023E89E /* UIBezierPath+curved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+curved.h"; path = "../UIBezierPath+curved.h"; sourceTree = "<group>"; };
 		DEC71AD2192E6D500023E89E /* UIBezierPath+curved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+curved.m"; path = "../UIBezierPath+curved.m"; sourceTree = "<group>"; };
+		DEC71AD5192E719B0023E89E /* MPBarsGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBarsGraphView.h; path = ../MPBarsGraphView.h; sourceTree = "<group>"; };
+		DEC71AD6192E719B0023E89E /* MPBarsGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPBarsGraphView.m; path = ../MPBarsGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				DEC71ACF192E69E20023E89E /* MPPlot.m */,
 				DE4FB939192A56BD004A1C1E /* MPGraphView.h */,
 				DE4FB93A192A56BD004A1C1E /* MPGraphView.m */,
+				DEC71AD5192E719B0023E89E /* MPBarsGraphView.h */,
+				DEC71AD6192E719B0023E89E /* MPBarsGraphView.m */,
 				DE4FB90A192A569E004A1C1E /* MPPlot */,
 				DE4FB929192A569E004A1C1E /* MPPlotTests */,
 				DE4FB903192A569E004A1C1E /* Frameworks */,
@@ -284,6 +289,7 @@
 				DE4FB93B192A56BD004A1C1E /* MPGraphView.m in Sources */,
 				DEC71AD0192E69E20023E89E /* MPPlot.m in Sources */,
 				DE4FB93E192A5752004A1C1E /* UIView+Frame.m in Sources */,
+				DEC71AD7192E719B0023E89E /* MPBarsGraphView.m in Sources */,
 				DE4FB915192A569E004A1C1E /* MPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

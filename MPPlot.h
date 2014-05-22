@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIView+Frame.h"
 
+
 #define PADDING 12
 
 #define ANIMATIONDURATION 1.5
@@ -26,6 +27,10 @@ typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
 @interface MPPlot : UIView{
     
     MPPlotType plotType;
+    
+    UIColor *_graphColor;
+    
+    CGFloat _animationDuration;
     
     NSArray *points;
     

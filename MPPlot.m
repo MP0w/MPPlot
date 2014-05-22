@@ -8,6 +8,7 @@
 
 #import "MPPlot.h"
 #import "MPGraphView.h"
+#import "MPBarsGraphView.h"
 
 @implementation MPPlot
 
@@ -37,6 +38,10 @@
     switch (type) {
         case MPPlotTypeGraph:
             return [[MPGraphView alloc] initWithFrame:frame];
+            break;
+
+        case MPPlotTypeBars:
+            return [[MPBarsGraphView alloc] initWithFrame:frame];
             break;
             
         default:
@@ -136,10 +141,12 @@
     
     self.values=values;
     
-    [self setNeedsDisplay];
 }
 
-
+-(void)setFrame:(CGRect)frame{
+    [super setFrame:frame];
+    [self setNeedsDisplay];
+}
 
 
 #pragma mark Getters
@@ -196,6 +203,9 @@
 
 - (void)animate{
     
+    self.waitToUpdate=NO;
+    
+    [self setNeedsDisplay];
 }
 
 

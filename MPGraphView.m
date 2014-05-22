@@ -155,7 +155,7 @@
     
     label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
     label.textAlignment=NSTextAlignmentCenter;
-    label.textColor=self.detailTextColor ? self.detailTextColor : ( self.graphColor ? self.graphColor : (self.fillColors.count ? [UIColor colorWithCGColor:(CGColorRef)[self.fillColors firstObject]] : self.graphColor) );
+    label.textColor=self.detailTextColor ? self.detailTextColor : ( _graphColor ? _graphColor : (self.fillColors.count ? [UIColor colorWithCGColor:(CGColorRef)[self.fillColors firstObject]] : self.graphColor) );
     label.backgroundColor=self.detailBackgroundColor;
     label.layer.borderColor=label.textColor.CGColor;
     label.layer.borderWidth=.5;
