@@ -217,9 +217,19 @@
 
 @implementation MPButton
 
+UIOffset tappableAreaOffset;
+
++ (id)buttonWithType:(UIButtonType)buttonType tappableAreaOffset:(UIOffset)tappableAreaOffset_{
+    
+    tappableAreaOffset=tappableAreaOffset_;
+    
+    return [super buttonWithType:buttonType];
+    
+}
+
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
     
-    return CGRectContainsPoint(CGRectInset(self.bounds, -25, -25), point);
+    return CGRectContainsPoint(CGRectInset(self.bounds,  -tappableAreaOffset.horizontal, -tappableAreaOffset.vertical), point);
     
 }
 

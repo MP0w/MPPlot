@@ -77,6 +77,8 @@ typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
 
 @interface MPButton : UIButton
 
++ (id)buttonWithType:(UIButtonType)buttonType tappableAreaOffset:(UIOffset)tappableAreaOffset;
+
 @end
 
 
