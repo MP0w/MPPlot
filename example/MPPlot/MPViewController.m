@@ -70,11 +70,15 @@
     
     graph5=[MPPlot plotWithType:MPPlotTypeBars frame:CGRectMake(0, 360, 320, 150)];
     graph5.waitToUpdate=YES;
+    graph5.detailView=(UIView <MPDetailView> *)[self customDetailView];
     [graph5 setAlgorithm:^CGFloat(CGFloat x) {
         return tan(x);
     } numberOfPoints:8];
     graph5.graphColor=[UIColor colorWithRed:0.120 green:0.806 blue:0.157 alpha:1.000];
     [self.view addSubview:graph5];
+    
+    
+    
     
     
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -86,6 +90,21 @@
 
 }
 
+
+- (UIView *)customDetailView{
+    
+    UILabel* label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    label.textAlignment=NSTextAlignmentCenter;
+    label.textColor=[UIColor blueColor];
+    label.backgroundColor=[UIColor whiteColor];
+    label.layer.borderColor=label.textColor.CGColor;
+    label.layer.borderWidth=.5;
+    label.layer.cornerRadius=label.width*.5;
+    label.adjustsFontSizeToFitWidth=YES;
+    label.clipsToBounds=YES;
+    
+    return label;
+}
 
 - (void)viewDidAppear:(BOOL)animated{
     

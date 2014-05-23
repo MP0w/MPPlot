@@ -188,11 +188,11 @@
     
     UIView *view=[super hitTest:point withEvent:event];
     
-    if (view==self && label.superview) {
+    if (view==self && self.detailView.superview) {
         [UIView animateWithDuration:.15 animations:^{
-            label.transform=CGAffineTransformMakeScale(0, 0);
+            self.detailView.transform=CGAffineTransformMakeScale(0, 0);
         }completion:^(BOOL finished) {
-            [label removeFromSuperview]; label=nil;
+            [self.detailView removeFromSuperview];
         }];
     }
     
@@ -208,6 +208,78 @@
     [self setNeedsDisplay];
 }
 
+
+
+#pragma mark Actions
+
+
+- (void)tap:(UIButton *)button{
+    
+    if (button.tag==currentTag) {
+        currentTag=-1;
+    }else currentTag=button.tag;
+    
+    if (self.detailView.superview) {
+        [UIView animateWithDuration:.15 animations:^{
+            self.detailView.transform=CGAffineTransformMakeScale(0, 0);
+        }completion:^(BOOL finished) {
+            
+            [self.detailView removeFromSuperview];
+            
+            if(currentTag>=0)
+                [self displayDetailViewAtPoint:button.center];
+
+        }];
+        
+    }else [self displayDetailViewAtPoint:button.center];
+
+    
+    
+
+    
+    
+}
+
+- (void)displayDetailViewAtPoint:(CGPoint)point{
+    
+    if ([[self.values objectAtIndex:currentTag] isKindOfClass:[NSString class]]) {
+        self.detailView.text=[self.values objectAtIndex:currentTag];
+    }else self.detailView.text=[NSString stringWithFormat:@"%@",[self.detailLabelFormatter stringFromNumber:[self.values objectAtIndex:currentTag]]];
+    
+    
+    self.detailView.center=point;
+    self.detailView.transform=CGAffineTransformMakeScale(0, 0);
+    
+    [self addSubview:self.detailView];
+    
+    [UIView animateWithDuration:.2 animations:^{
+        self.detailView.transform=CGAffineTransformMakeScale(1, 1);
+    }];
+    
+
+}
+
+
+-(UIView <MPDetailView> *)detailView{
+    
+    if (_detailView) {
+        return _detailView;
+    }
+    
+    UILabel* label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
+    label.textAlignment=NSTextAlignmentCenter;
+    label.textColor=self.detailTextColor ? self.detailTextColor : ( self.graphColor );
+    label.backgroundColor=self.detailBackgroundColor;
+    label.layer.borderColor=label.textColor.CGColor;
+    label.layer.borderWidth=.5;
+    label.layer.cornerRadius=3;
+    label.adjustsFontSizeToFitWidth=YES;
+    label.clipsToBounds=YES;
+    
+    self.detailView=(UILabel <MPDetailView> *)label;
+
+    return _detailView;
+}
 
 
 @end

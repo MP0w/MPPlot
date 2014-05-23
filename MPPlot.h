@@ -24,6 +24,12 @@ typedef NS_ENUM(NSUInteger, MPPlotType) {
 typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
 
 
+@protocol MPDetailView <NSObject>
+
+- (void)setText:(NSString *)text;
+
+@end
+
 @interface MPPlot : UIView{
     
     MPPlotType plotType;
@@ -35,8 +41,6 @@ typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
     NSArray *points;
     
     NSMutableArray *buttons;
-
-    UILabel *label;
     
     NSInteger currentTag;
     
@@ -59,6 +63,7 @@ typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
 @property (nonatomic,assign) BOOL waitToUpdate;
 @property (nonatomic,assign) CGFloat animationDuration;
 
+@property (nonatomic,readwrite) UIView<MPDetailView> *detailView;
 
 // detail View customization
 @property (nonatomic,retain) UIColor *detailBackgroundColor;
@@ -70,6 +75,8 @@ typedef CGFloat(^GraphPointsAlgorithm)(CGFloat x);
 - (void)animate;
 
 - (void)setAlgorithm:(GraphPointsAlgorithm)customAlgorithm numberOfPoints:(NSUInteger)numberOfPoints;
+
+- (void)tap:(UIButton *)button;
 
 @end
 

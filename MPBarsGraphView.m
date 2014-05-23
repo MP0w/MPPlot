@@ -35,7 +35,8 @@
     
     if (self.values.count && !self.waitToUpdate) {
         
-        [label removeFromSuperview]; label=nil;
+        if(self.detailView.superview)
+            [self.detailView removeFromSuperview];
         
         for (UIView *subview in self.subviews) {
             [subview removeFromSuperview];
@@ -119,44 +120,6 @@
 
 
 
-- (void)tap:(UIButton *)button{
-    
-    
-    if (label.superview) {
-        __block UILabel *labelBK=label;
-        [UIView animateWithDuration:.15 animations:^{
-            labelBK.transform=CGAffineTransformMakeScale(0, 0);
-        }completion:^(BOOL finished) {
-            [labelBK removeFromSuperview]; labelBK=nil;
-        }];
-    }
-    
-    
-    if (button.tag==currentTag) {
-        currentTag=-1;
-        return;
-    }else currentTag=button.tag;
-    
-    label=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
-    label.textAlignment=NSTextAlignmentCenter;
-    label.textColor=self.detailTextColor ? self.detailTextColor : ( self.graphColor );
-    label.backgroundColor=self.detailBackgroundColor;
-    label.layer.borderColor=label.textColor.CGColor;
-    label.layer.borderWidth=.5;
-    if ([[self.values objectAtIndex:currentTag] isKindOfClass:[NSString class]]) {
-        label.text=[self.values objectAtIndex:currentTag];
-    }else label.text=[NSString stringWithFormat:@"%@",[self.detailLabelFormatter stringFromNumber:[self.values objectAtIndex:currentTag]]];
-    label.center=CGPointMake(button.center.x,button.center.y);
-    label.layer.cornerRadius=3;
-    label.clipsToBounds=YES;
-    label.transform=CGAffineTransformMakeScale(0, 0);
-    [self addSubview:label];
-    [UIView animateWithDuration:.2 animations:^{
-        label.transform=CGAffineTransformMakeScale(1, 1);
-    }];
-    
-    
-}
 
 
 - (void)animate{
