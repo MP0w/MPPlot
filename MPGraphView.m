@@ -41,9 +41,6 @@
     
     if (self.values.count && !self.waitToUpdate) {
         
-        if(self.detailView.superview)
-            [self.detailView removeFromSuperview];
-
         ((CAShapeLayer *)self.layer).fillColor=[UIColor clearColor].CGColor;
         ((CAShapeLayer *)self.layer).strokeColor = self.graphColor.CGColor;
         ((CAShapeLayer *)self.layer).path = [self graphPathFromPoints].CGPath;
@@ -140,6 +137,10 @@
 
 - (void)animate{
     
+    if(self.detailView.superview)
+        [self.detailView removeFromSuperview];
+
+    
     self.waitToUpdate=NO;
     
     gradient.hidden=1;
@@ -160,6 +161,8 @@
     for (UIButton* button in buttons) {
         [button removeFromSuperview];
     }
+    
+
     
     buttons=[[NSMutableArray alloc] init];
     

@@ -52,11 +52,18 @@
     return nil;
 }
 
-#pragma mark Common
 
 
 
+- (void)drawRect:(CGRect)rect{
+    
+    [super drawRect:rect];
+    
+    if(self.detailView.superview)
+        [self.detailView removeFromSuperview];
 
+    
+}
 
 
 

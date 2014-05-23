@@ -35,8 +35,6 @@
     
     if (self.values.count && !self.waitToUpdate) {
         
-        if(self.detailView.superview)
-            [self.detailView removeFromSuperview];
         
         for (UIView *subview in self.subviews) {
             [subview removeFromSuperview];
