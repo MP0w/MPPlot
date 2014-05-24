@@ -141,7 +141,6 @@
         [self.detailView removeFromSuperview];
 
     
-    self.waitToUpdate=NO;
     
     gradient.hidden=1;
     
@@ -197,8 +196,10 @@
 }
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
-    
+
+    self.waitToUpdate=NO;
     gradient.hidden=0;
+
 }
 
 
