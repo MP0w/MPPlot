@@ -12,11 +12,39 @@
 
 @implementation MPPlot
 
++ (MPGraphValuesRange)rangeForValues:(NSArray *)values{
+    
+    CGFloat min,max;
+    
+    min=max=[[values firstObject] floatValue];
+    
+    
+    for (NSInteger i=0; i<values.count; i++) {
+        
+        CGFloat val=[[values objectAtIndex:i] floatValue];
+        
+        if (val>max) {
+            max=val;
+        }
+        
+        if (val<min) {
+            min=val;
+        }
+        
+    }
+    
+    
+    
+    return MPMakeGraphValuesRange(min, max);
+}
+
+
 
 - (id)init
 {
     self = [super init];
     if (self) {
+        self.valueRanges=MPMakeGraphValuesRange(CGFLOAT_MIN, CGFLOAT_MAX);
         NSAssert(![self isMemberOfClass:[MPPlot class]], @"You shouldn't init MPPlot directly, use the class method plotWithType:frame:");
     }
     return self;
@@ -26,6 +54,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.valueRanges=MPMakeGraphValuesRange(CGFLOAT_MIN, CGFLOAT_MAX);
         NSAssert(![self isMemberOfClass:[MPPlot class]], @"You shouldn't init MPPlot directly, use the class method plotWithType:frame:");
     }
     return self;
@@ -71,35 +100,25 @@
 
 
 
-- (NSMutableArray *)pointsForArray:(NSArray *)dict{
+- (NSMutableArray *)pointsForArray:(NSArray *)values{
     
-    CGFloat min,max,avg;
-    
-    min=max=[[dict firstObject] floatValue];
+    CGFloat min,max;
     
     
-    for (NSInteger i=0; i<dict.count; i++) {
-        
-        CGFloat val=[[dict objectAtIndex:i] floatValue];
-        
-        if (val>max) {
-            max=val;
-        }
-        
-        if (val<min) {
-            min=val;
-        }
-        
-        avg+=val;
+    if (MPValuesRangeNULL(self.valueRanges)) {
+        _valueRanges=[MPPlot rangeForValues:values];
+        min=_valueRanges.min;
+        max=_valueRanges.max;
+    }else{
+        max=_valueRanges.max;
+        min=_valueRanges.min;
     }
-    
-    avg/=dict.count;
     
     
     NSMutableArray *pointsArray=[[NSMutableArray alloc] init];
     
     if(max!=min){
-        for (NSString *p in dict) {
+        for (NSString *p in values) {
             
             CGFloat val=[p floatValue];
             
@@ -133,6 +152,14 @@
     
 }
 
+- (void)setValueRanges:(MPGraphValuesRange)valueRanges{
+    
+    _valueRanges=valueRanges;
+    
+    if (!MPValuesRangeNULL(valueRanges) && self.values) {
+        points=[self pointsForArray:self.values];
+    }
+}
 
 
 - (void)setAlgorithm:(GraphPointsAlgorithm)customAlgorithm numberOfPoints:(NSUInteger)numberOfPoints{
