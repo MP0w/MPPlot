@@ -186,7 +186,7 @@
 //        
 //        [self performSelector:@selector(displayPoint:) withObject:button afterDelay:delay*i];
         
-        [buttons addObject:button];
+//        [buttons addObject:button];
         
         
     }
