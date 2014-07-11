@@ -56,11 +56,11 @@
     UIBezierPath *path=[UIBezierPath bezierPath];
     
     
-    for (UIButton* button in buttons) {
-        [button removeFromSuperview];
-    }
-    
-    buttons=[[NSMutableArray alloc] init];
+//    for (UIButton* button in buttons) {
+//        [button removeFromSuperview];
+//    }
+//    
+//    buttons=[[NSMutableArray alloc] init];
     
     
     for (NSInteger i=0;i<points.count;i++) {
@@ -71,17 +71,16 @@
         if(i==0)
             [path moveToPoint:point];
         
-        
-        MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom tappableAreaOffset:UIOffsetMake(25, 25)];
-        [button setBackgroundColor:self.graphColor];
-        button.layer.cornerRadius=3;
-        button.frame=CGRectMake(0, 0, 6, 6);
-        button.center=point;
-        [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
-        button.tag=i;
-        [self addSubview:button];
-        
-        [buttons addObject:button];
+//        MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom tappableAreaOffset:UIOffsetMake(25, 25)];
+//        [button setBackgroundColor:self.graphColor];
+//        button.layer.cornerRadius=3;
+//        button.frame=CGRectMake(0, 0, 6, 6);
+//        button.center=point;
+//        [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+//        button.tag=i;
+//        [self addSubview:button];
+//        
+//        [buttons addObject:button];
         
         [path addLineToPoint:point];
         
@@ -157,13 +156,13 @@
 
     
 
-    for (UIButton* button in buttons) {
-        [button removeFromSuperview];
-    }
-    
-
-    
-    buttons=[[NSMutableArray alloc] init];
+//    for (UIButton* button in buttons) {
+//        [button removeFromSuperview];
+//    }
+//    
+//
+//    
+//    buttons=[[NSMutableArray alloc] init];
     
     CGFloat delay=((CGFloat)self.animationDuration)/(CGFloat)points.count;
     
@@ -175,17 +174,17 @@
         CGPoint point=[self pointAtIndex:i];
         
         
-        MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:self.graphColor];
-        button.layer.cornerRadius=3;
-        button.frame=CGRectMake(0, 0, 6, 6);
-        button.center=point;
-        [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
-        button.tag=i;
-        button.transform=CGAffineTransformMakeScale(0,0);
-        [self addSubview:button];
-        
-        [self performSelector:@selector(displayPoint:) withObject:button afterDelay:delay*i];
+////        MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom];
+////        [button setBackgroundColor:self.graphColor];
+////        button.layer.cornerRadius=3;
+////        button.frame=CGRectMake(0, 0, 6, 6);
+////        button.center=point;
+////        [button addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
+////        button.tag=i;
+////        button.transform=CGAffineTransformMakeScale(0,0);
+////        [self addSubview:button];
+//        
+//        [self performSelector:@selector(displayPoint:) withObject:button afterDelay:delay*i];
         
         [buttons addObject:button];
         
@@ -203,14 +202,14 @@
 }
 
 
-- (void)displayPoint:(UIButton *)button{
-    
-        [UIView animateWithDuration:.2 animations:^{
-            button.transform=CGAffineTransformMakeScale(1, 1);
-        }];
-    
-    
-}
+//- (void)displayPoint:(UIButton *)button{
+//    
+//        [UIView animateWithDuration:.2 animations:^{
+//            button.transform=CGAffineTransformMakeScale(1, 1);
+//        }];
+//    
+//    
+//}
 
 
 #pragma mark Setters
