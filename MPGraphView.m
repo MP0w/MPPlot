@@ -44,6 +44,7 @@
         ((CAShapeLayer *)self.layer).fillColor=[UIColor clearColor].CGColor;
         ((CAShapeLayer *)self.layer).strokeColor = self.graphColor.CGColor;
         ((CAShapeLayer *)self.layer).path = [self graphPathFromPoints].CGPath;
+        ((CAShapeLayer *)self.layer).lineWidth = self.lineWidth ? self.lineWidth : 1;
     }
 }
 
@@ -119,7 +120,6 @@
     }
     
     
-    path.lineWidth=self.lineWidth ? self.lineWidth : 1;
     
     
     return path;
