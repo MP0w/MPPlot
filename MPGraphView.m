@@ -240,7 +240,7 @@
         [self.layer addSublayer:gradient];
         
         
-    }else     _fillColors=fillColors;
+    }else _fillColors=fillColors;
     
     
     [self setNeedsDisplay];
