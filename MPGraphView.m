@@ -44,6 +44,7 @@
         ((CAShapeLayer *)self.layer).fillColor=[UIColor clearColor].CGColor;
         ((CAShapeLayer *)self.layer).strokeColor = self.graphColor.CGColor;
         ((CAShapeLayer *)self.layer).path = [self graphPathFromPoints].CGPath;
+        ((CAShapeLayer *)self.layer).lineWidth = self.lineWidth ? self.lineWidth : 1;
     }
 }
 
@@ -69,7 +70,6 @@
         
         if(i==0)
             [path moveToPoint:point];
-        
         
         MPButton *button=[MPButton buttonWithType:UIButtonTypeCustom tappableAreaOffset:UIOffsetMake(25, 25)];
         [button setBackgroundColor:self.graphColor];
@@ -119,7 +119,6 @@
     }
     
     
-    path.lineWidth=self.lineWidth ? self.lineWidth : 1;
     
     
     return path;
@@ -240,7 +239,7 @@
         [self.layer addSublayer:gradient];
         
         
-    }else     _fillColors=fillColors;
+    }else _fillColors=fillColors;
     
     
     [self setNeedsDisplay];
