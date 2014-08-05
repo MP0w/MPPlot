@@ -4,7 +4,7 @@ Create iOS native Graphs easily , fast and customizable...
 
 ![](images/graph.gif)
 
-[![CI Status](http://img.shields.io/travis/Alex Manzella/MPPlot.svg?style=flat)](https://travis-ci.org/Alex Manzella/MPPlot)
+[![CI Status](http://img.shields.io/travis/MP0w/MPPlot.svg?style=flat)](https://travis-ci.org/MP0w/MPPlot)
 [![Version](https://img.shields.io/cocoapods/v/MPPlot.svg?style=flat)](http://cocoadocs.org/docsets/MPPlot)
 [![License](https://img.shields.io/cocoapods/l/MPPlot.svg?style=flat)](http://cocoadocs.org/docsets/MPPlot)
 [![Platform](https://img.shields.io/cocoapods/p/MPPlot.svg?style=flat)](http://cocoadocs.org/docsets/MPPlot)
