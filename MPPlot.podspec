@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
                        Create iOS native Graphs easily , fast and customizable...
                        DESC
   s.homepage         = "https://github.com/MP0w/MPPlot"
-  # s.screenshots     = "https://raw.githubusercontent.com/MP0w/MPPlot/master/images/graph.gif"
+s.screenshots     = "https://raw.githubusercontent.com/MP0w/MPPlot/master/images/graph.gif"
   s.license          = 'BSD'
   s.author           = { "Alex Manzella" => "manzopower@icloud.com" }
   s.source           = { :git => "https://github.com/MP0w/MPPlot.git", :tag => s.version.to_s }
