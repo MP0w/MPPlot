@@ -1,0 +1,20 @@
+PODS:
+  - Expecta (0.3.1)
+  - MPPlot (0.1.0)
+  - Specta (0.2.1)
+
+DEPENDENCIES:
+  - Expecta
+  - MPPlot (from `../`)
+  - Specta (~> 0.2.1)
+
+EXTERNAL SOURCES:
+  MPPlot:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
+  MPPlot: 6dff01d2b927cbd01465a07e9064fc98be0d55f4
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+
+COCOAPODS: 0.33.1

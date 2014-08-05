@@ -20,18 +20,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
     graph=[MPPlot plotWithType:MPPlotTypeGraph frame:CGRectMake(0, 30, 320, 150)];
     
-//    NSMutableArray *arr=[[NSMutableArray alloc] init];
-//    
-//    for (NSInteger i=0; i<10; i++) {
-//        [arr addObject:@([self cubex:i])];
-//    }
-//
+    //    NSMutableArray *arr=[[NSMutableArray alloc] init];
+    //
+    //    for (NSInteger i=0; i<10; i++) {
+    //        [arr addObject:@([self cubex:i])];
+    //    }
+    //
     graph.fillColors=@[[UIColor colorWithRed:0.251 green:0.232 blue:1.000 alpha:1.000],[UIColor colorWithRed:0.282 green:0.945 blue:1.000 alpha:1.000]];
     graph.values=@[@2.5,@2.6,@2.8,@3,@3.3,@3,@3.6,@3.8,@3.2,@3.6,@4,@4.5];
     graph.graphColor=[UIColor colorWithRed:0.500 green:0.158 blue:1.000 alpha:1.000];
     graph.detailBackgroundColor=[UIColor colorWithRed:0.444 green:0.842 blue:1.000 alpha:1.000];
     graph.graphColor=[UIColor clearColor];
-
+    
     [self.view addSubview:graph];
     
     
@@ -46,7 +46,7 @@
     
     graph3=[[MPGraphView alloc] initWithFrame:CGRectMake(0, 200, 320, 150)];
     graph3.waitToUpdate=YES;
-
+    
     [graph3 setAlgorithm:^CGFloat(CGFloat x) {
         return sin((double)x);
     } numberOfPoints:13];
@@ -87,7 +87,7 @@
     [button setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(animate) forControlEvents:UIControlEventTouchUpInside];
-
+    
 }
 
 
@@ -111,7 +111,7 @@
     [super viewDidAppear:animated];
     
     [self performSelector:@selector(animate) withObject:nil afterDelay:1];
-
+    
 }
 
 - (void)animate{
@@ -119,7 +119,7 @@
     [graph2 animate];
     [graph3 animate];
     [graph5 animate];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
