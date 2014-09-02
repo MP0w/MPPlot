@@ -83,8 +83,10 @@
     
     [super drawRect:rect];
     
-    if(self.detailView.superview)
+    if(self.detailView.superview) {
         [self.detailView removeFromSuperview];
+        currentTag=-1;
+    }
 
     
 }
@@ -210,6 +212,7 @@
             self.detailView.transform=CGAffineTransformMakeScale(0, 0);
         }completion:^(BOOL finished) {
             [self.detailView removeFromSuperview];
+            currentTag=-1;
         }];
     }
     
