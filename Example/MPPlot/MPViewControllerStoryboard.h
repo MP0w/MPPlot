@@ -11,11 +11,9 @@
 #import "MPPlot.h"
 #import "MPBarsGraphView.h"
 
-@interface MPViewController : UIViewController{
+@interface MPViewControllerStoryboard : UIViewController{
     
-    MPGraphView *graph,*graph2,*graph3,*graph4;
-    
-    MPBarsGraphView *graph5;
+    BOOL layoutDone;
     
 }
 
