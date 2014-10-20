@@ -32,6 +32,16 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        self.backgroundColor=[UIColor clearColor];
+        
+        currentTag=-1;
+    }
+    return self;
+}
+
 
 
 - (void)drawRect:(CGRect)rect

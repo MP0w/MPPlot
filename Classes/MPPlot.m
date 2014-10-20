@@ -61,6 +61,19 @@
     return self;
 }
 
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.valueRanges=MPMakeGraphValuesRange(CGFLOAT_MIN, CGFLOAT_MAX);
+        NSAssert(![self isMemberOfClass:[MPPlot class]], @"You shouldn't init MPPlot directly, use the class method plotWithType:frame:");
+    }
+    
+    return self;
+}
+
 + (id)plotWithType:(MPPlotType)type frame:(CGRect)frame{
  
     switch (type) {

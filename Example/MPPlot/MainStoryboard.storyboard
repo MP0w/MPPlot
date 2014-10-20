@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b8j-rI-geQ">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller Storyboard-->
+        <scene sceneID="DUH-W7-87u">
+            <objects>
+                <viewController id="b8j-rI-geQ" customClass="MPViewControllerStoryboard" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ILv-XO-5Dx"/>
+                        <viewControllerLayoutGuide type="bottom" id="2cX-tj-jz8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fMd-Dx-fmz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofm-ll-DxC" customClass="MPGraphView">
+                                <rect key="frame" x="0.0" y="28" width="600" height="164"/>
+                                <color key="backgroundColor" red="1" green="0.98039215800000001" blue="0.80392158030000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="fAS-Qw-WJS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGI-ht-5TQ" userLabel="Graph View2" customClass="MPGraphView">
+                                <rect key="frame" x="0.0" y="28" width="600" height="164"/>
+                                <color key="backgroundColor" red="1" green="0.64705884459999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="mjJ-4x-yCp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yL6-3A-Hg5" userLabel="Graph View4" customClass="MPGraphView">
+                                <rect key="frame" x="0.0" y="200" width="600" height="164"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="FW6-VW-V33"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewu-EE-B0S" userLabel="Graph View3" customClass="MPGraphView">
+                                <rect key="frame" x="0.0" y="200" width="600" height="164"/>
+                                <color key="backgroundColor" red="0.56329303980000001" green="0.80753749610000003" blue="0.87365740540000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="hu3-dQ-dnG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btX-rV-0wt" userLabel="Graph View5" customClass="MPBarsGraphView">
+                                <rect key="frame" x="0.0" y="372" width="600" height="164"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="he9-6D-RA9"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="164" id="zJe-CN-enc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eGI-ht-5TQ" firstAttribute="leading" secondItem="fMd-Dx-fmz" secondAttribute="leadingMargin" constant="-16" id="AJ7-ST-bcI"/>
+                            <constraint firstAttribute="centerX" secondItem="ewu-EE-B0S" secondAttribute="centerX" id="E2O-lc-54f"/>
+                            <constraint firstItem="Ofm-ll-DxC" firstAttribute="leading" secondItem="fMd-Dx-fmz" secondAttribute="leadingMargin" constant="-16" id="FYh-1v-D7s"/>
+                            <constraint firstItem="yL6-3A-Hg5" firstAttribute="top" secondItem="eGI-ht-5TQ" secondAttribute="bottom" constant="8" id="K0Z-pc-gow"/>
+                            <constraint firstItem="eGI-ht-5TQ" firstAttribute="top" secondItem="ILv-XO-5Dx" secondAttribute="bottom" constant="8" id="NJ8-PD-O3Q"/>
+                            <constraint firstItem="yL6-3A-Hg5" firstAttribute="leading" secondItem="fMd-Dx-fmz" secondAttribute="leadingMargin" constant="-16" id="Qsd-HZ-4uN"/>
+                            <constraint firstAttribute="centerX" secondItem="yL6-3A-Hg5" secondAttribute="centerX" id="U96-UN-KWo"/>
+                            <constraint firstItem="ewu-EE-B0S" firstAttribute="leading" secondItem="fMd-Dx-fmz" secondAttribute="leadingMargin" constant="-16" id="Vyj-ml-blx"/>
+                            <constraint firstItem="btX-rV-0wt" firstAttribute="leading" secondItem="fMd-Dx-fmz" secondAttribute="leadingMargin" constant="-16" id="YfQ-Wn-ePC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eGI-ht-5TQ" secondAttribute="trailing" constant="-16" id="ae3-iU-Cgr"/>
+                            <constraint firstAttribute="centerX" secondItem="eGI-ht-5TQ" secondAttribute="centerX" id="cbI-Lv-dcm"/>
+                            <constraint firstItem="Ofm-ll-DxC" firstAttribute="top" secondItem="ILv-XO-5Dx" secondAttribute="bottom" constant="8" id="ib9-Au-REf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="btX-rV-0wt" secondAttribute="trailing" constant="-16" id="jAm-Rf-RD5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ofm-ll-DxC" secondAttribute="trailing" constant="-16" id="kOx-aZ-yjx"/>
+                            <constraint firstItem="2cX-tj-jz8" firstAttribute="top" secondItem="btX-rV-0wt" secondAttribute="bottom" constant="64" id="llu-re-Gwi"/>
+                            <constraint firstItem="ewu-EE-B0S" firstAttribute="top" secondItem="eGI-ht-5TQ" secondAttribute="bottom" constant="8" id="ol0-lE-ODA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ewu-EE-B0S" secondAttribute="trailing" constant="-16" id="vOL-Bo-gIK"/>
+                            <constraint firstItem="btX-rV-0wt" firstAttribute="top" secondItem="ewu-EE-B0S" secondAttribute="bottom" constant="8" id="xNv-BG-GfE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yL6-3A-Hg5" secondAttribute="trailing" constant="-16" id="yn2-ou-1xF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="graph" destination="Ofm-ll-DxC" id="udF-yI-9v0"/>
+                        <outlet property="graph2" destination="eGI-ht-5TQ" id="eAp-dO-3Ag"/>
+                        <outlet property="graph3" destination="ewu-EE-B0S" id="FrB-2S-rJw"/>
+                        <outlet property="graph4" destination="yL6-3A-Hg5" id="eb4-Fi-ypN"/>
+                        <outlet property="graph5" destination="btX-rV-0wt" id="Gri-wa-V7l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yY0-aV-kGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="375"/>
+        </scene>
+    </scenes>
+</document>
