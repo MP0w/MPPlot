@@ -2,4 +2,4 @@
 
 language: objective-c
 script:
-- xctool test -workspace Example/MPPlot.xcworkspace -scheme MPPlot -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool -project MPPlotExample/MPPlotExample.xcodeproj -scheme MPPlotExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
