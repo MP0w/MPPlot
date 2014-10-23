@@ -95,14 +95,8 @@
     
     if(self.detailView.superview) {
         [self.detailView removeFromSuperview];
-<<<<<<< Updated upstream
         currentTag=-1;
     }
-
-    
-=======
-    }
->>>>>>> Stashed changes
 }
 
 - (NSMutableArray *)pointsForArray:(NSArray *)values

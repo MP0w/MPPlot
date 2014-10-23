@@ -60,6 +60,7 @@
     
     graph5 = [MPPlot plotWithType:MPPlotTypeBars frame:CGRectMake(0, 360, self.view.width, 150)];
     graph5.waitToUpdate = YES;
+    graph5.lineWidth=2;
     graph5.detailView = (UIView <MPDetailView> *)[self customDetailView];
     [graph5 setAlgorithm:^CGFloat(CGFloat x) {
         return tan(x);
