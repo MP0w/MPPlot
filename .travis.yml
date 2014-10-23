@@ -1,5 +1,5 @@
 # reference: http://www.objc.io/issue-6/travis-ci.html
 
 language: objective-c
-script:
-- xctool -project MPPlotExample/MPPlotExample.xcodeproj -scheme MPPlotExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+xcode_project: MPPlotExample/MPPlotExample.xcodeproj
+xcode_scheme: MPPlotExample
