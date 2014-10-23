@@ -72,7 +72,7 @@
     CGFloat barWidth = self.width/(points.count*2+1);
     CGFloat radius = barWidth*(self.topCornerRadius >=0 ? self.topCornerRadius : 0.3);
     
-    for (NSInteger i=0;i<points.count;i++) {
+    for (NSInteger i=0; i<points.count; i++) {
         
         CGFloat height = [[points objectAtIndex:i] floatValue]*(self.height-PADDING*2)+PADDING;
         
