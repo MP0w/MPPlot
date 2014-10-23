@@ -9,22 +9,18 @@
 #import "UIBezierPath+curved.h"
 
 // Based on code from Erica Sadun
-
 void getPointsFromBezier(void *info, const CGPathElement *element);
 NSArray *pointsFromBezierPath(UIBezierPath *bpath);
-
 
 #define VALUE(_INDEX_) [NSValue valueWithCGPoint:points[_INDEX_]]
 #define POINT(_INDEX_) [(NSValue *)[points objectAtIndex:_INDEX_] CGPointValue]
 
 @implementation UIBezierPath (curved)
 
-
 // Get points from Bezier Curve
 void getPointsFromBezier(void *info, const CGPathElement *element)
 {
     NSMutableArray *bezierPoints = (__bridge NSMutableArray *)info;
-    
     // Retrieve the path element type and its points
     CGPathElementType type = element->type;
     CGPoint *points = element->points;
@@ -60,7 +56,6 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     
     UIBezierPath *smoothedPath = [self copy];
     [smoothedPath removeAllPoints];
-    
     [smoothedPath moveToPoint:POINT(0)];
     
     for (NSUInteger index = 1; index < points.count - 2; index++)
@@ -92,6 +87,5 @@ NSArray *pointsFromBezierPath(UIBezierPath *bpath)
     
     return smoothedPath;
 }
-
 
 @end

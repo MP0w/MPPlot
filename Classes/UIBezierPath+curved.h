@@ -10,7 +10,6 @@
 
 @interface UIBezierPath (curved)
 
-
 - (UIBezierPath*)smoothedPathWithGranularity:(NSInteger)granularity;
 
 @end

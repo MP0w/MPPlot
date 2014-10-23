@@ -1,7 +1,0 @@
-target 'MPPlot', :exclusive => true do
-  pod "MPPlot", :path => "../"
-end
-
-target 'Tests', :exclusive => true do
-  pod "MPPlot", :path => "../"
-end

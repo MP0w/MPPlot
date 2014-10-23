@@ -11,9 +11,9 @@
 @interface MPBarsGraphView : MPPlot{
     
     BOOL shouldAnimate;
+
 }
 
-@property (nonatomic,readwrite) CGFloat topCornerRadius;
-
+@property (nonatomic, readwrite) CGFloat topCornerRadius;
 
 @end

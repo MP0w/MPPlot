@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MPPlot.h"
 
-
 @interface MPGraphView : MPPlot{
     
     CAGradientLayer *gradient;
 }
 
-@property (nonatomic,assign) BOOL curved;
-@property (nonatomic,retain) NSArray *fillColors; // array of colors or CGColor
+@property (nonatomic, assign) BOOL curved;
+@property (nonatomic, retain) NSArray *fillColors; // array of colors or CGColor
 
 @end
