@@ -190,6 +190,11 @@
     return _detailBackgroundColor ? _detailBackgroundColor : [UIColor whiteColor];
 }
 
+- (UIColor *)detailTextColor
+{
+    return _detailTextColor ? _detailTextColor : [[self graphColor] colorWithAlphaComponent:1];
+}
+
 - (CGFloat)animationDuration
 {
     return _animationDuration>0.0 ? _animationDuration : ANIMATIONDURATION;
@@ -270,7 +275,7 @@
     
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = self.detailTextColor ? self.detailTextColor : ( self.graphColor );
+    label.textColor = self.detailTextColor;
     label.backgroundColor = self.detailBackgroundColor;
     label.layer.borderColor = label.textColor.CGColor;
     label.layer.borderWidth = .5;

@@ -12,6 +12,4 @@
 
 @property (nonatomic, assign) UIOffset tappableAreaOffset;
 
-+ (id)buttonWithType:(UIButtonType)buttonType tappableAreaOffset:(UIOffset)tappableAreaOffset;
-
 @end

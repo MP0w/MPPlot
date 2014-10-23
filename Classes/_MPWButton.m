@@ -10,16 +10,9 @@
 
 @implementation _MPWButton
 
-+ (id)buttonWithType:(UIButtonType)buttonType tappableAreaOffset:(UIOffset)tappableAreaOffset
-{
-    _MPWButton *button = [super buttonWithType:buttonType];
-    button.tappableAreaOffset=tappableAreaOffset;
-    return button;
-}
-
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
-    return CGRectContainsPoint(CGRectInset(self.bounds,  -_tappableAreaOffset.horizontal, -_tappableAreaOffset.vertical), point);
+    return CGRectContainsPoint(CGRectInset(self.bounds,  -self.tappableAreaOffset.horizontal, -self.tappableAreaOffset.vertical), point);
 }
 
 @end

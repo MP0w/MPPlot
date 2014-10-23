@@ -52,6 +52,17 @@
     }
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    UIView *view = [super hitTest:point withEvent:event];
+    
+    if (view==self) {
+        return nil;
+    }
+    
+    return view;
+}
+
 - (UIBezierPath *)graphPathFromPoints
 {
     BOOL fill=self.fillColors.count;
@@ -71,7 +82,8 @@
             [path moveToPoint:point];
         }
         
-        _MPWButton *button = [_MPWButton buttonWithType:UIButtonTypeCustom tappableAreaOffset:UIOffsetMake(25, 25)];
+        _MPWButton *button = [_MPWButton buttonWithType:UIButtonTypeCustom];
+        button.tappableAreaOffset = UIOffsetMake(25, 25);
         [button setBackgroundColor:self.graphColor];
         button.layer.cornerRadius = 3;
         button.frame = CGRectMake(0, 0, 6, 6);
@@ -146,6 +158,7 @@
         CGPoint point=[self pointAtIndex:i];
         
         _MPWButton *button=[_MPWButton buttonWithType:UIButtonTypeCustom];
+        button.tappableAreaOffset = UIOffsetMake(25, 25);
         [button setBackgroundColor:self.graphColor];
         button.layer.cornerRadius=3;
         button.frame = CGRectMake(0, 0, 6, 6);

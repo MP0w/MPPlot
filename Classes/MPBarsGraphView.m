@@ -76,7 +76,8 @@
         
         CGFloat height = [[points objectAtIndex:i] floatValue]*(self.height-PADDING*2)+PADDING;
         
-        _MPWButton *button = [_MPWButton buttonWithType:UIButtonTypeCustom tappableAreaOffset:UIOffsetMake(barWidth/2, self.height)];
+        _MPWButton *button = [_MPWButton buttonWithType:UIButtonTypeCustom];
+        button.tappableAreaOffset = UIOffsetMake(barWidth/2, self.height);
         [button setBackgroundColor:self.graphColor];
         button.frame=CGRectMake(barWidth+(barWidth*i+barWidth*i), animated ? self.height : self.height-height, barWidth, animated ? height+20 : height);
         
