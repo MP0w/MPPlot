@@ -1,5 +1,6 @@
-# reference: http://www.objc.io/issue-6/travis-ci.html
-
+before_install:
+- brew update
+- if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 language: objective-c
 xcode_project: MPPlotExample/MPPlotExample.xcodeproj
 xcode_scheme: MPPlotExample
