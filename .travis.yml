@@ -2,5 +2,6 @@ before_install:
 - brew update
 - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 language: objective-c
-xcode_project: MPPlotExample/MPPlotExample.xcodeproj
-xcode_scheme: MPPlotExample
+script:
+- xcodebuild -project MPPlotExample/MPPlotExample.xcodeproj -target MPPlotExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
