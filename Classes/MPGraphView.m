@@ -222,4 +222,10 @@
     [self setNeedsDisplay];
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.gradient.frame = self.bounds;
+}
+
 @end
