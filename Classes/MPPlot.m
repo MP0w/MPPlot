@@ -255,7 +255,7 @@
     if ([[self.values objectAtIndex:currentTag] isKindOfClass:[NSString class]]) {
         self.detailView.text = [self.values objectAtIndex:currentTag];
     }else{
-        self.detailView.text = [NSString stringWithFormat:@"%@",[self.detailLabelFormatter stringFromNumber:[self.values objectAtIndex:currentTag]]];
+        self.detailView.text = [NSString stringWithFormat:@"%ld月收益:\n%@元",(long)currentTag,[self.detailLabelFormatter stringFromNumber:[self.values objectAtIndex:currentTag]]];
     }
     
     self.detailView.center = point;
@@ -273,14 +273,16 @@
         return _detailView;
     }
     
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 40)];
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = self.detailTextColor;
     label.backgroundColor = self.detailBackgroundColor;
     label.layer.borderColor = label.textColor.CGColor;
     label.layer.borderWidth = .5;
     label.layer.cornerRadius = 3;
-    label.adjustsFontSizeToFitWidth = YES;
+    label.font = [UIFont systemFontOfSize:8];
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.numberOfLines = 0;
     label.clipsToBounds = YES;
     
     self.detailView = (UILabel <MPDetailView> *)label;
